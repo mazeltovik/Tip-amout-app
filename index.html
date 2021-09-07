@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CalculatorApp</title>
+	<link href="calculatorApp.css" type="text/css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Besley&display=swap" rel="stylesheet">
+    <script>
+        'use strict'
+    window.onload = function(){
+            let obj = {
+                bill:'',
+                percent:'',
+                numberOfPeople:'',
+            };
+            let percent= document.querySelector('.percent_container');
+            percent.addEventListener('click',function(event){
+                let target;
+                if(!event.target.classList.contains('custom')){
+                   target = event.target.closest('div');
+                   let reg = target.textContent.match(/\d+/).toString();
+                   obj.percent = reg/100;
+                }
+                if(!target) return;
+                if(obj.bill==0||obj.percent==0||obj.numberOfPeople==0) return;
+                else count(obj.bill,obj.percent,obj.numberOfPeople);
+            });
+            let custom_percent = document.querySelector('.custom');
+            custom_percent.addEventListener('change',function(){
+                obj.percent = this.value/100;
+                if(obj.bill==0||obj.percent==0||obj.numberOfPeople==0) return;
+                else count(obj.bill,obj.percent,obj.numberOfPeople);
+            });
+            let bill = document.getElementById('bill');
+            bill.addEventListener('change',function(){
+                obj.bill = this.value;
+                if(obj.bill==0||obj.percent==0||obj.numberOfPeople==0) return;
+                else count(obj.bill,obj.percent,obj.numberOfPeople);
+            });
+            bill.addEventListener('focus',function(){
+                this.value='';
+                this.placeholder = 0;
+                obj.bill = this.value;
+            });
+            let numPeople = document.getElementById('numPeople');
+            numPeople.addEventListener('change',function(){
+                let warning = document.querySelector('.warning');
+                if(this.value==0){
+                    warning.style.display = 'block';
+                    this.style.border = '1px solid orange';
+                }
+                else{
+                    warning.style.display = 'none';
+                    this.style.border = '';
+                }
+                obj.numberOfPeople = this.value;
+                if(obj.bill==0||obj.percent==0||obj.numberOfPeople==0) return;
+                else count(obj.bill,obj.percent,obj.numberOfPeople);
+            });
+            numPeople.addEventListener('focus',function(){
+                this.value='';
+                this.placeholder = 0;
+                obj.numberOfPeople = this.value;
+            });
+            function count(bill,percent,numberOfPeople){
+                let tipAmount = document.querySelector('.amount_int p');
+                let total = document.querySelector('.total_int p');
+                let arr = [];
+                arr[0] = (bill/numberOfPeople)*percent;
+                arr[1] = (bill/numberOfPeople) + arr[0];
+                arr = arr.map(v=>{return '$'+v.toFixed(2)});
+                console.log(obj);
+                [tipAmount.innerHTML,total.innerHTML] = arr;
+            }
+            let reset = document.getElementById('reset');
+            reset.addEventListener('click',function(){
+                document.querySelector('.amount_int p').innerHTML = '$0.00';
+                document.querySelector('.total_int p').innerHTML = '$0.00';
+                document.getElementById('bill').value = 0;
+                document.querySelector('.custom').value = '';
+                document.getElementById('numPeople').value = 0;
+                for(let key in obj){
+                    obj[key] = 0;
+                }
+            });
+    }
+    </script>
+</head>
+<body>
+    <p class = 'nameApp'>spli<br>tter</p>
+    <div class = 'menu_app'>
+        <div class = 'bill'>
+            <p>Bill,<image src = 'icon-dollar.svg'></image></p>
+            <input type="text" name="bill" value="" placeholder="0" id='bill'>
+        </div>
+        <div class = 'selectTip'>
+            <p>Select Tip %</p>
+            <div class='percent_container'>
+                <div>5%</div>
+                <div>10%</div>
+                <div>15%</div>
+                <div>25%</div>
+                <div>50%</div>
+                <div><input type="text" name="custom" value="" placeholder="Custom" maxlength="2" class='custom'></div>
+            </div>
+        </div>
+        <div class = 'peoples'>
+            <div class = 'peoples_warning'>
+                <p>Number of people, <image src = 'icon-person.svg'></image></p>
+                <p class = 'warning'>Can`t be a zero</p>
+            </div>
+            <input type="text" name="people" value="" id='numPeople' placeholder="0">
+        </div>
+        <div class = 'count'>
+            <div class = 'amount'>
+                <div class='amout_str'>
+                    <p>Tip Amount</p>
+                    <p>/ person</p>
+                </div>
+                <div class='amount_int'>
+                    <p>$0.00</p>
+                </div>
+            </div>
+            <div class = 'total'>
+                <div class='total_str'>
+                    <p>Total</p>
+                    <p>/ person</p>
+                </div>
+                <div class='total_int'>
+                    <p>$0.00</p>
+                </div>
+            </div>
+            <div class = 'button'>
+                <p><input type = 'button' value = 'RESET' id='reset'></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

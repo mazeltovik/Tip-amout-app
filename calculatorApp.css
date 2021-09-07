@@ -1,0 +1,315 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #c5e4e7;
+}
+
+.nameApp{
+    color:#385e5f;
+    font-family: Besley;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height:2.5rem;
+    letter-spacing: 0.6rem;
+    text-align: center;
+    padding-top:10vh;
+    text-transform: uppercase;
+}
+
+.menu_app{
+    margin: 5vh 25vw 0 25vw;
+    width: 50vw;
+    height: 50vh;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 0 0.5rem #b3d9da;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.2fr 0.6fr 0.2fr;
+    grid-template-areas: 
+        'bill count'
+        'selectTip count'
+        'peoples count';
+}
+
+.bill{
+    grid-area:bill;
+    margin: 2rem;
+}
+
+.bill p{
+    color:00474b;
+    font-size: 1rem;
+}
+
+.bill input{
+    padding-right: 0.5rem;
+    width: 20vw;
+    height: 4vh;
+    background-color: #f3f8fb;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: right;
+    font-family: Besley;
+    color:#064c4a;
+    font-size: 1rem; 
+    cursor: pointer;
+}
+.bill input:focus{
+    border: 0.1rem solid #56a69b;
+    
+}
+
+.selectTip{
+    grid-area: selectTip;
+    padding: 2rem;
+}
+.selectTip p{
+    color:#00474b;
+    font-size: 1rem;
+}
+
+.percent_container{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:1rem;
+    width: 20vw;
+}
+.percent_container div{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    background-color: #00474b;
+    border-radius: 0.5rem;
+    color:white;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Besley;
+    cursor: pointer;
+}
+
+.percent_container div:nth-child(6){
+    padding: 0;
+}
+.percent_container div input{
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: #f3f8fc;
+    font-size: 1rem;
+    border:0;
+    color: #aac4c5;
+    cursor: pointer;
+}
+.percent_container div input:focus{
+    color:#00474b;
+    text-align: right;
+}
+
+.percent_container div:active{
+    background-color: #9fe8df;
+    
+}
+
+.percent_container div:hover{
+    background-color: #9fe8df;
+    color:#00474b;
+    transition: 0.3s;
+}
+
+.custom{
+    background-color: #f3f8fb;
+    outline: none;
+    border: none;
+    font-family: Besley;
+    font-size: 1rem; 
+    cursor: pointer;
+}
+
+.custom:focus{
+    color:#064c4a;
+    border: 0.1rem solid #56a69b;
+}
+
+.peoples{
+    grid-area: peoples;
+    padding: 2rem;
+}
+.peoples_warning{
+    display: flex;
+    justify-content: space-between
+}
+.warning{
+    padding-right: 1.3rem;
+    color:orange;
+    display: none;
+}
+
+.peoples p{
+    color:00474b;
+    font-size: 1rem;
+}
+.peoples input{
+    padding-right: 0.5rem;
+    width: 20vw;
+    height: 4vh;
+    background-color: #f3f8fb;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    text-align: right;
+    font-family: Besley;
+    color:#064c4a;
+    font-size: 1rem;
+    cursor: pointer; 
+}
+.peoples input:focus{
+    border: 0.1rem solid #56a69b; 
+}
+
+.count{
+    grid-area: count;
+    background-color: #00474b;
+    border-radius: 1rem;
+    width:90%;
+    height: 90%;
+    margin: 2rem 1rem 0 1rem;
+}
+
+.amount{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.3rem 2rem 0 2rem;
+}
+.amout_str p:nth-child(1){
+    color:white;
+    font-family: Besley;
+    font-size: 0.9rem;
+}
+
+.amout_str p:nth-child(2){
+    color:#23c7af;
+    font-family: Besley;
+    font-size: 0.7rem;
+}
+.amount_int p{
+    color:#23c7af;
+    font-family: Besley;
+    font-size: 2rem;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4rem 2rem 0 2rem;
+}
+.total_str p:nth-child(1){
+    color:white;
+    font-family: Besley;
+    font-size: 0.9rem;
+}
+
+.total_str p:nth-child(2){
+    color:#23c7af;
+    font-family: Besley;
+    font-size: 0.7rem;
+}
+.total_int p{
+    color:#23c7af;
+    font-family: Besley;
+    font-size: 2rem;
+}
+
+.button p{
+    text-align: center;
+}
+
+.button input{
+    font-family: Besley;
+    font-size: 1rem;
+    padding: 0.5rem 9rem 0.5rem 9rem;
+    background-color: #9fe8df;
+    opacity: 50%;
+    border:0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+#reset{
+    margin-top:10rem;
+}
+
+.button input:hover{
+    opacity: 100%;
+    transition: 0.3s;
+}
+
+@media only screen and (max-width : 1000px){
+    
+    .menu_app{
+        margin-left: 0;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.1fr 0.2fr 1fr;
+        gap:0;
+        grid-template-areas: 
+            'bill'
+            'selectTip'
+            'peoples'
+            'count';
+    }
+    .leftside{
+        width: 100%;
+    }
+    .bill{
+        margin:0;
+        padding: 2% 4% 2% 4%;
+    }
+    #bill{
+        width:100%; 
+        
+    }
+
+    .percent_container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap:0.5rem;
+        width: auto;
+    }
+    
+    .selectTip{
+        padding: 2% 4% 2% 4%;
+    }
+
+    .peoples{
+        margin:0;
+        padding: 2% 4% 2% 4%;
+    }
+
+    #numPeople{
+        width: 100%;
+    }
+
+    .count{
+        margin: auto;
+    }
+
+    #reset{
+        width: 90%;
+        margin: 7% 4% 14% 4%;
+    }
+    
+}
+
+
