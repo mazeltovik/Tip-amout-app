@@ -10,6 +10,7 @@ body{
 }
 
 .nameApp{
+    padding-bottom:2rem;
     color:#385e5f;
     font-family: Besley;
     font-size: 2rem;
@@ -22,9 +23,8 @@ body{
 }
 
 .menu_app{
-    margin: 5vh 25vw 0 25vw;
-    width: 50vw;
-    height: 50vh;
+    margin: 0 auto;
+    width: 60rem;
     background-color: white;
     border-radius: 2rem;
     box-shadow: 0 0 0.5rem #b3d9da;
@@ -49,8 +49,8 @@ body{
 
 .bill input{
     padding-right: 0.5rem;
-    width: 20vw;
-    height: 4vh;
+    width: 25rem;
+    height: 2rem;
     background-color: #f3f8fb;
     outline: none;
     border: none;
@@ -81,7 +81,7 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap:1rem;
-    width: 20vw;
+    width: 25rem;
 }
 .percent_container div{
     padding: 1rem 1.5rem 1rem 1.5rem;
@@ -160,8 +160,8 @@ body{
 }
 .peoples input{
     padding-right: 0.5rem;
-    width: 20vw;
-    height: 4vh;
+    width: 25rem;
+    height: 2rem;
     background-color: #f3f8fb;
     outline: none;
     border: none;
@@ -182,7 +182,7 @@ body{
     border-radius: 1rem;
     width:90%;
     height: 90%;
-    margin: 2rem 1rem 0 1rem;
+    margin: 2rem 1rem 2rem 1rem;
 }
 
 .amount{
@@ -233,21 +233,20 @@ body{
 
 .button p{
     text-align: center;
+    margin-top:9rem;
 }
 
 .button input{
     font-family: Besley;
     font-size: 1rem;
-    padding: 0.5rem 9rem 0.5rem 9rem;
+    padding: 0.5rem 7rem 0.5rem 7rem;
     background-color: #9fe8df;
     opacity: 50%;
     border:0;
     border-radius: 0.5rem;
     cursor: pointer;
 }
-#reset{
-    margin-top:10rem;
-}
+
 
 .button input:hover{
     opacity: 100%;
@@ -259,7 +258,7 @@ body{
     .menu_app{
         margin-left: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: 0.2fr 0.1fr 0.2fr 1fr;
         gap:0;
@@ -274,7 +273,7 @@ body{
     }
     .bill{
         margin:0;
-        padding: 2% 4% 2% 4%;
+        padding: 1rem;
     }
     #bill{
         width:100%; 
@@ -289,12 +288,12 @@ body{
     }
     
     .selectTip{
-        padding: 2% 4% 2% 4%;
+        padding: 1rem;
     }
 
     .peoples{
         margin:0;
-        padding: 2% 4% 2% 4%;
+        padding: 1rem;
     }
 
     #numPeople{
@@ -302,12 +301,14 @@ body{
     }
 
     .count{
+        width:93%;
         margin: auto;
+        height:100%;
     }
 
-    #reset{
-        width: 90%;
-        margin: 7% 4% 14% 4%;
+    .button p{
+        margin-top:1rem;
+        margin-bottom:1rem;
     }
     
 }
